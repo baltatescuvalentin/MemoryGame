@@ -2,7 +2,8 @@
 
 :root {
   --bg-color: #1F2937;
-  --main-bg-color: rgba(169, 161, 161, 0.996);
+  --new-game-btn: #0000006c;
+  --main-bg-color: rgba(169, 161, 161, 0.195);
   --main-color: whitesmoke;
   --text-style: 'Press Start 2P', sans-serif;
 }
@@ -29,4 +30,18 @@ footer {
 footer p {
   color: whitesmoke;
   font-size: 16px;
+}
+
+main {
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  flex-grow: 1;
+  min-height: calc(100vh - 48px - 100px - 50px);
 }

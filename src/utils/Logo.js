@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../images/yugiohlogo.svg';
+
 
 function Logo() {
 
@@ -17,7 +17,7 @@ const StyledImage = styled.img`
 `;
 
 StyledImage.defaultProps = {
-    src: logo,
+    src: window.location.origin + '/images/yugiohlogo.svg',
     alt: 'logo'
 }
 

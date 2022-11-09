@@ -1,4 +1,4 @@
-export const cards = [
+const cards = [
     {
         id: 1,
         path: '../images/1.ico',
@@ -80,3 +80,18 @@ export const cards = [
         name: 'Pegasus J. Crawford',
     },
 ]
+
+function shuffleCards(cards) {
+    const auxCards = cards.map(c => c);
+    const newCards = [];
+
+    for(let i = 0; i < 16; i++) {
+        const position =  Math.floor(Math.random() * (auxCards.length));
+        const card = auxCards[position];
+        newCards.push(card);
+        auxCards.splice(position, 1);
+    }
+    return newCards;
+}
+
+export { cards, shuffleCards }
