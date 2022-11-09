@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { cards, shuffleCards } from '../utils/data';
 import styled from 'styled-components';
 import Card from './Card';
@@ -7,15 +7,6 @@ import Card from './Card';
 function Game( {score, bestScore, handleScore, handleBestScore, handleIsOver} ) {
 
     const [cardsSet, setCardsSet] = useState(new Set());
-
-    let currCards = cards;
-    let test = shuffleCards(cards);
-    console.log('test');
-    console.log(test);
-    let children = currCards.map(card => 
-        <Card key={card.id} id={card.id} path={card.path} name={card.name} clickCard={clickCard} />);
-
-    console.log(`first: ${children}`)
 
     function clickCard(id) {
         if(cardsSet.has(id)) {
@@ -28,27 +19,23 @@ function Game( {score, bestScore, handleScore, handleBestScore, handleIsOver} ) 
             handleScore(score + 1);
             setCardsSet(s => s.add(id));
         }
-        let test = shuffleCards(cards);
-        currCards = test;
-        console.log('currCards');
-        console.log(currCards);
-        children = currCards.map(card => 
-            <Card key={card.id} id={card.id} path={card.path} name={card.name} clickCard={clickCard} />);
-
-        console.log('children');
-        console.log(children);
     }
 
-    useEffect(() => {
-        
-    }, [cardsSet]);
+    return (
+        <ChildComponent cards={cards} clickCard={clickCard}/>
+    )
+}
 
+
+function ChildComponent({cards, clickCard}) {
+    let shuffle = shuffleCards(cards);
+    let children = [];
+    children = shuffle.map(card => 
+             <Card key={card.id} id={card.id} path={card.path} name={card.name} clickCard={clickCard} />);
 
     return (
         <Grid>
-            {
-                children
-            }
+            {children}
         </Grid>
     )
 }

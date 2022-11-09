@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect, useRef } from 'react';
+import { useState } from 'react';
 import Scoreboard from './Scoreboard';
 import GameOver from './GameOver';
 import Game from './Game';

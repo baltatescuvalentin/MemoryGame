@@ -17,7 +17,7 @@ const StyledImage = styled.img`
 `;
 
 StyledImage.defaultProps = {
-    src: window.location.origin + '/images/yugiohlogo.svg',
+    src: 'images/yugiohlogo.svg',
     alt: 'logo'
 }
 
