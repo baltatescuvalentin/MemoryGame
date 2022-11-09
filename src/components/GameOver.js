@@ -19,8 +19,8 @@ function GameOver( {score, bestScore, isOver, handleIsOver, handleScore} ) {
 const Modal = styled.div`
     top: 0;
     min-width: 100vw;
-    min-height: 100vh;
-    position: absolute;
+    min-height: 100%;
+    position: fixed;
     display: flex;
     flex-direction: column;
     align-items: center;
